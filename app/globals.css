@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colors */
+  --color-primary: #11a0d4;
+  --color-accent: #17C3B2;
+  --color-background: #f6f7f8;
+  --color-surface: #ffffff;
+  --color-text: #0d181b;
+  --color-muted: #B9D6D6;
+
+  /* Shadows */
+  --shadow-soft: 0 20px 40px rgba(17, 160, 212, 0.08);
+  --shadow-soft-hover: 0 30px 50px rgba(17, 160, 212, 0.15);
 }
 
+/* Fonts — @theme inline resolves the CSS variable at runtime rather than at
+   theme-compile time, avoiding a circular self-reference. The --font-sans and
+   --font-serif CSS properties are set by next/font via the `variable` option
+   applied to the <html> element in layout.tsx. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans, Manrope, sans-serif);
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Blob morphing animation used in Hero */
+@keyframes morph {
+  0%   { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.blob-mask {
+  animation: morph 8s ease-in-out infinite alternate;
+}
+
+/* Practitioners page — CSS-only hover effects */
+.duotone-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #11a0d4;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+  border-radius: inherit;
+}
+.group:hover .duotone-hover::after { opacity: 0.6; }
+
+.quote-slide {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.group:hover .quote-slide { transform: translateY(0); opacity: 1; }
+
+.name-block { transition: transform 0.3s ease; }
+.group:hover .name-block { transform: translateY(-1rem); }
+
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+@media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+@media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+.masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
