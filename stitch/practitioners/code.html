@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practitioners - Healing Waters Clinic</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11a0d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101d22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid { column-count: 3; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        .duotone-hover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: #11a0d4;
+            mix-blend-mode: multiply;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 10;
+            border-radius: inherit;
+        }
+        .group:hover .duotone-hover::after {
+            opacity: 0.6;
+        }
+        .quote-slide {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        .group:hover .quote-slide {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- Shared TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-slate-200 dark:border-slate-800 px-4 md:px-10 py-4 mb-12">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Healing Waters Clinic</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Services</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Practitioners</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Journey</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Facilities</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+<span class="truncate">Book Your Visit</span>
+</button>
+</div>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-slate-900 dark:text-white">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<main class="w-full flex-1">
+<!-- Header Section -->
+<div class="text-center mb-16 px-4">
+<h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 relative inline-block">
+                            Guided by Experts
+                            <span class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-primary rounded-full opacity-80"></span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-6 text-lg">
+                            Meet our team of dedicated healers, medical professionals, and wellness guides committed to your restorative journey.
+                        </p>
+</div>
+<!-- Masonry Grid -->
+<div class="masonry-grid px-4 pb-20">
+<!-- Practitioner Card 1 -->
+<div class="masonry-item group relative rounded-xl overflow-hidden cursor-pointer bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-[3/4] w-full overflow-hidden">
+<img alt="Female doctor smiling in clinic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Female doctor in white coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9jm318yS6CjWPMka7G9scIEtRUkOpxhNKyShLO5m6dAoWV3n8ugbiCuCo2KH-_UynlDF1Ut1R97xRJA_azTbjts0ibEecCfRmHI1Rh0YcUwEz0tRtpswEeno9387rCJKjVM1b7HFe9k6sAjcjSf8zPJ-9WCYhHKGvy9De-0JagiX_SiNSXpr_jwUGELhpavh7iSRJ8EMAikwyzqstBAvfQK-POMZQeY9MX_Y0iJLfur4qusJFFRMCBWUuNZl-f3gLY1biUAJLy2U"/>
+<div class="duotone-hover absolute inset-0"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-20"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 z-30 flex flex-col justify-end h-full">
+<div class="transform transition-transform duration-300 group-hover:-translate-y-4">
+<h3 class="text-white text-2xl font-bold mb-1">Dr. Elena Rostova</h3>
+<p class="text-primary font-semibold text-sm mb-2">ND, LAc</p>
+<p class="text-slate-300 text-sm">Holistic Hydrotherapy &amp; Acupuncture</p>
+</div>
+<div class="quote-slide absolute bottom-6 left-6 right-6 h-0 overflow-hidden group-hover:h-auto">
+<p class="text-white/90 italic text-sm border-l-2 border-primary pl-3 mt-4">
+                                            "Healing begins when the body feels safe enough to rest."
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Practitioner Card 2 -->
+<div class="masonry-item group relative rounded-xl overflow-hidden cursor-pointer bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-square w-full overflow-hidden">
+<img alt="Male physician portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Male doctor looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG5EUg7Zh9Q5_U85G25lnyLpYF8NU0yYBiGbopOQjJrJeV_fKE3dgrZstL_OUo81xmcnmBxknv4mOXAWLln4mGtJLaxSCksUhimhnMIfefyM032BhuLeoJqMpK1Yol9JCpWd32iUDZ_zXh1jJBMFjhPwVtj8wji5PYXfq4FHj1WaS36t9Md-RO8rQlFE_ijN8NaAOCHxGWagcjqdL-SH7-Gh3zDWLsatdzcOS27P-fHsDyMx-C5705tJRFMUAB6_ape3xgNqYkuNU"/>
+<div class="duotone-hover absolute inset-0"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-20"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 z-30 flex flex-col justify-end h-full">
+<div class="transform transition-transform duration-300 group-hover:-translate-y-4">
+<h3 class="text-white text-2xl font-bold mb-1">Dr. Marcus Thorne</h3>
+<p class="text-primary font-semibold text-sm mb-2">DC, MS</p>
+<p class="text-slate-300 text-sm">Restorative Chiropractic</p>
+</div>
+<div class="quote-slide absolute bottom-6 left-6 right-6 h-0 overflow-hidden group-hover:h-auto">
+<p class="text-white/90 italic text-sm border-l-2 border-primary pl-3 mt-4">
+                                            "Alignment is the foundation of energy flow."
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Practitioner Card 3 -->
+<div class="masonry-item group relative rounded-xl overflow-hidden cursor-pointer bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full overflow-hidden">
+<img alt="Female massage therapist portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Woman in wellness uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBf1JhN7bcjNuuQYT7ClQnhkZjSUqi4i3AD-APWMh5JK7XrxnlKiVclZXPVrJuy88HuMQaW1yZghE-Lm26EujitBupBHfbkY9PwbWMtcCSBmoyAksHAnoQO1fy4eGUYQG8Q8KxVIh5H5sgFz0O2V_60Q5WnBSzjdxiqONC1v4Fsnl6BTnxe7JnZQXng6eaEfjqRrRGS1h9NTjjMPq2uoE3RM75VHVg6ekOMc48cxPYNNTF8GK5HSmV_y_EyEYNRgWpvufDs8emtiM"/>
+<div class="duotone-hover absolute inset-0"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-20"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 z-30 flex flex-col justify-end h-full">
+<div class="transform transition-transform duration-300 group-hover:-translate-y-4">
+<h3 class="text-white text-2xl font-bold mb-1">Sarah Jenkins</h3>
+<p class="text-primary font-semibold text-sm mb-2">LMT, CST</p>
+<p class="text-slate-300 text-sm">Craniosacral &amp; Deep Tissue</p>
+</div>
+<div class="quote-slide absolute bottom-6 left-6 right-6 h-0 overflow-hidden group-hover:h-auto">
+<p class="text-white/90 italic text-sm border-l-2 border-primary pl-3 mt-4">
+                                            "The tissues hold the issues; we gently ask them to let go."
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Practitioner Card 4 -->
+<div class="masonry-item group relative rounded-xl overflow-hidden cursor-pointer bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-[3/4] w-full overflow-hidden">
+<img alt="Male physical therapist smiling" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Smiling man in scrubs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXFUTLuwA9F9dKzr0tYHSAy2zNnKkSCQcQGSWsVy6LDDA33ubLskPS1r5pUwqj9LgKSnVCrT_NWsIygwvg-XTywjdO5SHRm2miF4iP1tnXjaLmOlXVY5PSdM624Fxa-lqtvBFAWCB4SlRzDNC0yCeWzIbZxG_rb6FhVfA2HpJjMdTMbFiAZQjutbR9R86IE6cvwfhzNJkI_LqG_KcsOS57Lrb1ROLnivohexDmeitJfPhmi3iSQYYnAl-bUFXRj1PPIUTYn1dJHOU"/>
+<div class="duotone-hover absolute inset-0"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-20"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 z-30 flex flex-col justify-end h-full">
+<div class="transform transition-transform duration-300 group-hover:-translate-y-4">
+<h3 class="text-white text-2xl font-bold mb-1">David Chen</h3>
+<p class="text-primary font-semibold text-sm mb-2">PT, DPT</p>
+<p class="text-slate-300 text-sm">Movement Re-education</p>
+</div>
+<div class="quote-slide absolute bottom-6 left-6 right-6 h-0 overflow-hidden group-hover:h-auto">
+<p class="text-white/90 italic text-sm border-l-2 border-primary pl-3 mt-4">
+                                            "Movement is medicine when guided by intention."
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Practitioner Card 5 -->
+<div class="masonry-item group relative rounded-xl overflow-hidden cursor-pointer bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-shadow duration-300">
+<div class="relative aspect-square w-full overflow-hidden">
+<img alt="Female nutritionist portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Professional woman smiling slightly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbeaLW6Ky2GvqdkkGmsDsQCJv2CerPe960Ez7eHg7J1JSndtbcAfwzJGx93sG_6xl0Zj16DHGP2PszGKgn5cve4VykoL3pB93P3C02ZBQXNg8B3DP8oQlPGNGldZ4fKTcQ_nCGvpdzH-V_Lj7NOFxpMhvoyTUNbuudxNGHo2yTIWfAFTKmE48gEzOzFH3_z-8yPN1oo6KGLFV2L6DxvSix1_Uag4jGQe1gZSmXozde9NOSQTfFSjGnztLrK3vWVG_EzeeMhIFnD_4"/>
+<div class="duotone-hover absolute inset-0"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-20"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 z-30 flex flex-col justify-end h-full">
+<div class="transform transition-transform duration-300 group-hover:-translate-y-4">
+<h3 class="text-white text-2xl font-bold mb-1">Aisha Patel</h3>
+<p class="text-primary font-semibold text-sm mb-2">RDN, IFNCP</p>
+<p class="text-slate-300 text-sm">Integrative Nutrition</p>
+</div>
+<div class="quote-slide absolute bottom-6 left-6 right-6 h-0 overflow-hidden group-hover:h-auto">
+<p class="text-white/90 italic text-sm border-l-2 border-primary pl-3 mt-4">
+                                            "Nourishment comes not just from food, but from a balanced life."
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>

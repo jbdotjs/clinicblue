@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healing Waters Clinic - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#11a0d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101d22",
+              "accent-cyan": "#17C3B2",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem", 
+              "lg": "1rem", 
+              "xl": "1.5rem", 
+              "2xl": "2rem",
+              "full": "9999px"
+            },
+            boxShadow: {
+              'soft': '0 20px 40px rgba(17, 160, 212, 0.08)',
+              'soft-hover': '0 30px 50px rgba(17, 160, 212, 0.15)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f6f7f8;
+            color: #0d181b;
+        }
+        
+        .blob-mask {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        .service-card {
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 50px rgba(17, 160, 212, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display relative min-h-screen">
+<!-- Top Navigation (Shared Component) -->
+<div class="relative flex h-auto w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 w-full">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 pb-4 mb-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 28px;">water_drop</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">Healing Waters Clinic</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Services</a>
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Practitioners</a>
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Journey</a>
+<a class="text-slate-700 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Facilities</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-soft">
+<span class="truncate">Book Visit</span>
+</button>
+</div>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden flex items-center text-slate-900">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</header>
+<!-- Hero Section -->
+<div class="@container w-full mb-24 mt-8">
+<div class="flex flex-col gap-12 px-4 py-10 @[864px]:flex-row @[864px]:items-center justify-between">
+<!-- Text Content -->
+<div class="flex flex-col gap-8 @[864px]:w-1/2 @[864px]:pr-12 z-10">
+<div class="flex flex-col gap-4 text-left">
+<h1 class="text-primary text-5xl @[864px]:text-[64px] font-extrabold leading-[1.1] tracking-[-0.02em]">
+                                        Restore Your Natural Flow
+                                    </h1>
+<h2 class="text-slate-600 dark:text-slate-300 text-lg @[864px]:text-xl font-normal leading-relaxed max-w-lg mt-4">
+                                        Experience holistic wellness designed to lower stress and elevate physical recovery. Step into tranquility.
+                                    </h2>
+</div>
+<div>
+<button class="flex w-fit cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-primary text-white text-base font-bold leading-normal tracking-[0.05em] shadow-soft hover:shadow-soft-hover hover:-translate-y-1 transition-all duration-300">
+<span class="truncate">Discover Treatments</span>
+<span class="material-symbols-outlined ml-2 text-xl">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<!-- Image Content -->
+<div class="@[864px]:w-1/2 flex justify-center relative">
+<!-- Decorative background blob -->
+<div class="absolute inset-0 bg-primary/10 blob-mask scale-105 z-0 blur-xl"></div>
+<div class="relative w-full max-w-[500px] aspect-square blob-mask overflow-hidden shadow-soft z-10 border-4 border-white dark:border-slate-800">
+<img alt="Serene hydrotherapy pool with calming blue water" class="w-full h-full object-cover object-center" data-alt="Serene hydrotherapy pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPOuD4lRfkE7mW9Uf2RlAng4VhjTJLh0mkRt00OHkBdUFReIVEphLF1pmp8M_Atr5nQ13SRrM7KB82MbiZaa_sWf5q97iAUaXChXGgFIaJfvnwFiw-jUMKLZW7ZJT2RAYUo5BHM79Jfimqt47-jBSrWiH6Z-b280ELpq5pmUg6lddCh3turlzwnF_KNYNFN_AJ8RgXiAfpEvZM5PlmXE3A0DIIvMMDTKoFrxCnrb80J25Dtrarb9UpiNGYR9IzS28U3K7I6nT_PkA"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Services Section (Based on Shared Component but adapted to Theme) -->
+<div class="flex flex-col gap-12 px-4 py-16 mb-20 @container w-full relative">
+<!-- Subtle background accent -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full bg-primary/5 -z-10 rounded-[3rem]"></div>
+<div class="flex flex-col gap-4 items-center text-center max-w-2xl mx-auto">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Core Therapies</span>
+<h2 class="text-slate-900 dark:text-slate-100 tracking-tight text-4xl @[480px]:text-5xl font-extrabold leading-tight">
+                                Our Services
+                            </h2>
+<p class="text-slate-600 dark:text-slate-300 text-lg font-normal leading-relaxed mt-2">
+                                Explore treatments tailored for physical recovery, stress relief, and restoring your body's natural balance.
+                            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-0 mt-8">
+<!-- Service 1 -->
+<div class="service-card flex flex-1 gap-6 rounded-2xl bg-white dark:bg-slate-800 p-8 flex-col shadow-soft border border-slate-100 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] -z-0 transition-transform group-hover:scale-110"></div>
+<div class="text-primary bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center z-10" data-icon="water_drop" data-size="32px" data-weight="fill">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 32px;">water_drop</span>
+</div>
+<div class="flex flex-col gap-3 z-10">
+<h3 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight">Hydrotherapy</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">Immerse yourself in healing waters. Contrast therapy to reduce inflammation and accelerate recovery.</p>
+</div>
+<div class="mt-auto pt-4 z-10">
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                        Discover <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="service-card flex flex-1 gap-6 rounded-2xl bg-white dark:bg-slate-800 p-8 flex-col shadow-soft border border-slate-100 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] -z-0 transition-transform group-hover:scale-110"></div>
+<div class="text-primary bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center z-10" data-icon="spa" data-size="32px">
+<span class="material-symbols-outlined" style="font-size: 32px;">spa</span>
+</div>
+<div class="flex flex-col gap-3 z-10">
+<h3 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight">Massage Therapy</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">Release deep tissue tension, improve circulation, and restore musculoskeletal balance with expert hands.</p>
+</div>
+<div class="mt-auto pt-4 z-10">
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                        Discover <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="service-card flex flex-1 gap-6 rounded-2xl bg-white dark:bg-slate-800 p-8 flex-col shadow-soft border border-slate-100 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] -z-0 transition-transform group-hover:scale-110"></div>
+<div class="text-primary bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center z-10" data-icon="acupuncture" data-size="32px">
+<span class="material-symbols-outlined" style="font-size: 32px;">acupuncture</span>
+</div>
+<div class="flex flex-col gap-3 z-10">
+<h3 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight">Acupuncture</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">Realign your body's natural energy pathways to manage pain, reduce stress, and promote holistic healing.</p>
+</div>
+<div class="mt-auto pt-4 z-10">
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                        Discover <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial Section -->
+<div class="w-full rounded-[2.5rem] bg-gradient-to-br from-primary/10 to-primary/5 p-10 md:p-16 mb-32 flex flex-col items-center text-center shadow-sm relative overflow-hidden">
+<div class="absolute top-4 left-4 text-primary/20 opacity-50">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div class="max-w-3xl relative z-10">
+<p class="text-2xl md:text-3xl font-medium text-slate-800 dark:text-slate-200 leading-relaxed italic mb-8">
+                                "The moment I stepped in, my anxiety melted away. The hydrotherapy session was truly a restorative experience that left me feeling completely renewed."
+                            </p>
+<div class="flex items-center justify-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-300 overflow-hidden border-2 border-white shadow-sm">
+<img alt="Sarah T. smiling portrait" class="w-full h-full object-cover" data-alt="Portrait of Sarah T" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgJTCMl6sQ4piUsrvze0io4Fck2xCVctBQuFFu5TLr1XDHHE0EsvWvCuAmgNHaOwz25OL_LGcsjA9DEJQ_IzpLm5UEU0JnfjpE3O3-LEvvGcyKacx62hkRmxe9uuVatI5KmKryk2P3RnaETQuF6_7G58cklFYk06MQZWbbLYMJesquMNjK03MHwDWVILhag2-a5YAXzaBJpAZNsLM-EzGh_SdfFsdVr6mffhSDN8xxBrTPN8W30sfwvC3mz6BXuYSKICwaV_fH5eE"/>
+</div>
+<div class="text-left">
+<h4 class="font-bold text-slate-900 dark:text-white">Sarah T.</h4>
+<span class="text-sm text-slate-500">Wellness Patient</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Quick Book Button -->
+<a class="fixed bottom-8 right-8 z-50 flex items-center justify-center gap-2 rounded-full h-14 px-8 bg-accent-cyan text-white text-base font-bold leading-normal tracking-[0.05em] shadow-[0_10px_25px_rgba(23,195,178,0.4)] hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(23,195,178,0.5)] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="truncate">Quick Book</span>
+</a>
+</body></html>

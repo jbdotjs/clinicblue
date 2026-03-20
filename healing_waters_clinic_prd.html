@@ -1,0 +1,207 @@
+# Healing Waters Clinic
+
+## Product Overview
+
+**The Pitch:** A digital front door for a premium wellness clinic, designed to lower patient anxiety before they even step foot in the building. It seamlessly guides users from exploring holistic treatments to booking their first restorative session.
+
+**For:** Individuals seeking physical recovery, stress relief, and holistic wellness who value environment, expertise, and a frictionless experience.
+
+**Device:** desktop
+
+**Design Direction:** Soft & Organic. Fluid layouts mirroring water, conveying tranquility through sweeping curves, generous whitespace, and a serene oceanic palette.
+
+**Inspired by:** Oura Ring, The Well
+
+---
+
+## Screens
+
+- **Home:** Establishes the clinic's philosophy, highlights key treatments, and provides an immediate booking entry point.
+- **Services:** Detailed breakdown of therapies (Hydrotherapy, Massage, Acupuncture) with pricing and benefits.
+- **Practitioners:** Profiles of specialists, emphasizing their expertise and healing approach.
+- **Patient Journey:** Step-by-step guide to the first visit, lowering barrier to entry through transparency.
+- **Facilities:** High-quality image gallery of the clinic's calming interiors and specialized equipment.
+- **Booking:** A frictionless, step-by-step appointment scheduling interface.
+
+---
+
+## Key Flows
+
+**Schedule a Consultation:** Patient finds and books their first appointment.
+
+1. User is on **Home** -> sees floating "Book Your Visit" CTA in the top right header.
+2. User clicks CTA -> navigates to the **Booking** screen.
+3. User selects "Hydrotherapy Intake", chooses an available time, and enters contact details.
+4. Booking is confirmed with a smooth success animation and follow-up email details.
+
+---
+
+<details>
+<summary>Design System</summary>
+
+## Color Palette
+
+- **Primary:** `#227C9D` - Buttons, prominent links, active states
+- **Background:** `#F9FBFB` - Page background, conveying pristine cleanliness
+- **Surface:** `#FFFFFF` - Cards, floating navigation, modal windows
+- **Text:** `#2D3A3A` - Body text, deep slate for high readability without the harshness of black
+- **Muted:** `#B9D6D6` - Borders, secondary text, subtle dividers
+- **Accent:** `#17C3B2` - Cyan gradient highlights, success states, subtle hover effects
+
+## Typography
+
+- **Headings:** Instrument Serif, 400, 32-64px
+- **Body:** Outfit, 300, 18px
+- **Small text:** Outfit, 300, 14px
+- **Buttons:** Outfit, 500, 16px, tracking `0.05em`
+
+**Style notes:** Extensive use of `border-radius: 32px` on cards to mimic water droplets. Shadows are large, soft, and tinted blue (`box-shadow: 0 20px 40px rgba(34, 124, 157, 0.08)`). Accents feature a subtle linear gradient from Primary (`#227C9D`) to Accent (`#17C3B2`).
+
+## Design Tokens
+
+```css
+:root {
+  --color-primary: #227C9D;
+  --color-background: #F9FBFB;
+  --color-surface: #FFFFFF;
+  --color-text: #2D3A3A;
+  --color-muted: #B9D6D6;
+  --color-accent: #17C3B2;
+  --font-heading: 'Instrument Serif', serif;
+  --font-body: 'Outfit', sans-serif;
+  --radius-card: 32px;
+  --radius-button: 100px;
+  --spacing-section: 120px;
+  --shadow-soft: 0 20px 40px rgba(34, 124, 157, 0.08);
+}
+```
+
+</details>
+
+---
+
+<details>
+<summary>Screen Specifications</summary>
+
+### Home
+
+**Purpose:** Introduce the clinic's atmosphere and direct users to treatments or booking.
+
+**Layout:** Hero section with an asymmetric fluid image mask, followed by a 3-column service highlight, and a full-width testimonial strip.
+
+**Key Elements:**
+- **Hero Image:** Fluid organic blob shape masking a photo of the hydrotherapy pool.
+- **Hero Headline:** "Restore Your Natural Flow", `64px` Instrument Serif, `#227C9D`.
+- **Quick Book Floating Bar:** Sticky bottom-right pill-shaped button, `#17C3B2` background, white text.
+
+**States:**
+- **Loading:** Slow, wave-like shimmer effect across image placeholders.
+
+**Components:**
+- **Service Card:** `360px` wide, white background, `32px` radius, contains an elegant custom icon, title, and "Discover" link.
+
+**Interactions:**
+- **Hover Service Card:** Y-axis lift `-8px`, shadow opacity increases to `0.15`, smooth `0.4s` ease.
+
+**Responsive:**
+- **Desktop:** 3-column service grid.
+- **Tablet:** 2-column service grid.
+- **Mobile:** Single column, reduced hero headline to `48px`.
+
+### Services
+
+**Purpose:** Detailed catalog of available wellness treatments.
+
+**Layout:** Vertical list of treatments, alternating left/right alignment for images and text to create a meandering, river-like flow down the page.
+
+**Key Elements:**
+- **Category Filter:** Horizontal pill list (All, Hydrotherapy, Massage, Alternative).
+- **Service Block:** `600px` image on one side, title, description, and `$XX / XX mins` pricing details on the other.
+- **Book Specific Service CTA:** Outlined button under each description.
+
+**States:**
+- **Empty:** "Check back soon for new wellness offerings."
+
+**Interactions:**
+- **Scroll:** Images parallax slightly (`10%` speed) relative to text.
+- **Click Category:** Smooth fade-out/fade-in of filtered list items.
+
+### Practitioners
+
+**Purpose:** Build trust by introducing the medical and wellness staff.
+
+**Layout:** Masonry grid of portrait cards, emphasizing approachability and expertise.
+
+**Key Elements:**
+- **Header:** "Guided by Experts", subtle cyan underline.
+- **Profile Card:** High-res portrait with a soft blue duotone hover effect, practitioner name, credentials, and specialty.
+- **Philosophy Quote:** Short italicized text snippet overlaid on the bottom of the portrait.
+
+**Interactions:**
+- **Hover Profile:** Image transitions from full color to a subtle `#227C9D` tinted duotone, quote slides up `10px`.
+
+### Patient Journey
+
+**Purpose:** Demystify the clinical process to reduce new patient anxiety.
+
+**Layout:** A winding SVG path connecting 4 distinct milestones down the center of the page.
+
+**Key Elements:**
+- **Path Graphic:** `#17C3B2` to `#227C9D` gradient stroke, `4px` width.
+- **Milestone Nodes:** `48px` circular nodes containing icons (Consultation, Assessment, Treatment, Integration).
+- **FAQ Accordion:** Bottom section answering common questions (insurance, what to wear).
+
+**Interactions:**
+- **Scroll:** The gradient path visually "fills" as the user scrolls down the page.
+- **Click FAQ:** Content expands with a `max-height` transition, arrow icon rotates `180deg`.
+
+### Facilities
+
+**Purpose:** Showcase the physical environment to emphasize cleanliness and tranquility.
+
+**Layout:** Full-screen edge-to-edge photo grid, minimal text.
+
+**Key Elements:**
+- **Main Gallery:** Interlocking grid of horizontal and vertical images (waiting room, private suites, pools).
+- **Lightbox Viewer:** Full-screen modal for viewing images in high resolution.
+
+**Interactions:**
+- **Click Image:** Opens Lightbox with a slow `1.05` scale-in animation.
+- **Hover Image:** `+5%` scale inside a hidden overflow container.
+
+### Booking
+
+**Purpose:** Convert interest into a confirmed appointment.
+
+**Layout:** Centered, narrow card (`600px` max-width) acting as a focused, distraction-free modal over a blurred background of the clinic.
+
+**Key Elements:**
+- **Progress Tracker:** 3 subtle dots at the top (Service, Time, Details).
+- **Date Picker:** Custom calendar component, `#F9FBFB` background, `#227C9D` for selected dates.
+- **Confirmation Screen:** Large cyan checkmark, appointment summary, "Add to Calendar" button.
+
+**States:**
+- **Error:** Subtle red outline (`#E07A5F`) on missing fields, inline text warning.
+- **Loading:** Button text changes to "Confirming...", spinning dual-ring loader.
+
+**Interactions:**
+- **Click Next:** Slide-left transition for the next step of the form.
+
+</details>
+
+---
+
+<details>
+<summary>Build Guide</summary>
+
+**Stack:** HTML + Tailwind CSS v3
+
+**Build Order:**
+1. **Home** - Establishes the core fluid layout, typography sizing, and global navigation.
+2. **Services** - Defines the reusable image/text alternating blocks and card shadows.
+3. **Booking** - Implements the complex interactive form components and focused layout.
+4. **Practitioners** - Applies the masonry layout and duotone hover states.
+5. **Patient Journey** - Introduces the scroll-linked SVG path animation.
+6. **Facilities** - Finalizes the gallery grid and lightbox interactions.
+
+</details>
