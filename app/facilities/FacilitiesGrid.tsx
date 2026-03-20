@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const rooms = [
@@ -36,6 +36,7 @@ type Room = (typeof rooms)[0];
 
 export default function FacilitiesGrid() {
   const [selected, setSelected] = useState<Room | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const close = useCallback(() => setSelected(null), []);
 
@@ -44,6 +45,12 @@ export default function FacilitiesGrid() {
     if (selected) window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [selected, close]);
+
+  useEffect(() => {
+    if (selected) {
+      closeButtonRef.current?.focus();
+    }
+  }, [selected]);
 
   return (
     <>
@@ -79,6 +86,9 @@ export default function FacilitiesGrid() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={close}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selected?.label ?? "Facility photo"}
           >
             <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
             <motion.div
@@ -100,6 +110,7 @@ export default function FacilitiesGrid() {
                 <p className="text-white font-semibold text-xl">{selected.label}</p>
               </div>
               <button
+                ref={closeButtonRef}
                 onClick={close}
                 className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-white hover:bg-black/70 transition-colors"
                 aria-label="Close"

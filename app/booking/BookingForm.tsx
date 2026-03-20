@@ -13,6 +13,7 @@ const treatments = [
 const DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 const TIMES = ["9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
 
+// DEMO: calendar locked to April 2026 — replace with dynamic month state for production
 const YEAR = 2026;
 const MONTH = 3;
 const MONTH_NAME = "April 2026";
@@ -84,7 +85,7 @@ export default function BookingForm() {
           <svg viewBox="0 0 52 52" className="w-12 h-12">
             <motion.path
               fill="none"
-              stroke="#17C3B2"
+              stroke="var(--color-accent)"
               strokeWidth="4"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -180,7 +181,7 @@ export default function BookingForm() {
                         value={t.id}
                         checked={selectedTreatment === t.id}
                         onChange={() => setSelectedTreatment(t.id)}
-                        className="mt-1 accent-[#11a0d4]"
+                        className="mt-1 accent-primary"
                       />
                       <div className="flex flex-col flex-1">
                         <div className="flex justify-between items-center mb-1">
@@ -220,10 +221,10 @@ export default function BookingForm() {
                   <div className="flex items-center justify-between mb-4">
                     <span className="font-semibold text-slate-900">{MONTH_NAME}</span>
                     <div className="flex gap-1">
-                      <button className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center">
+                      <button disabled aria-label="Previous month (demo only)" className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed">
                         <span className="material-symbols-outlined text-sm">chevron_left</span>
                       </button>
-                      <button className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center">
+                      <button disabled aria-label="Next month (demo only)" className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed">
                         <span className="material-symbols-outlined text-sm">chevron_right</span>
                       </button>
                     </div>

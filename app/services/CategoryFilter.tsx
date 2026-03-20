@@ -65,6 +65,7 @@ export default function CategoryFilter() {
           <button
             key={cat}
             onClick={() => setActive(cat)}
+            aria-pressed={active === cat}
             className={`flex h-10 items-center rounded-full px-5 text-sm font-semibold transition-all ${
               active === cat
                 ? "bg-primary text-white shadow-sm"
