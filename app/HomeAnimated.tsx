@@ -45,7 +45,7 @@ export default function HomeAnimated() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <div className="flex flex-col gap-4">
-              <h1 className="text-primary text-5xl md:text-[64px] leading-[1.1] font-extrabold tracking-tight">
+              <h1 className="font-serif text-primary text-5xl md:text-[64px] leading-[1.1] tracking-tight">
                 Restore Your<br />Natural Flow
               </h1>
               <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed max-w-lg">
